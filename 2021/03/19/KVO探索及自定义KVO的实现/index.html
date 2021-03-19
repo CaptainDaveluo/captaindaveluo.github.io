@@ -5,23 +5,23 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://example.com">
+  <link rel="dns-prefetch" href="https://captaindaveluo.github.io">
   <title>KVO探索及自定义KVO的实现 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="1. KVO是什么KVO Apple官方文档 KVO(Key-Value Observing): Objective-C对观察者设计模式的一种实现.键-值观察是一种机制，允许在其他对象的指定属性发生更改时通知对象. 2. KVO底层实现的原理Key-Value Observing Implementation Details(官方文档) Automatic key-value observing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="KVO探索及自定义KVO的实现">
-<meta property="og:url" content="http://example.com/2021/03/19/KVO%E6%8E%A2%E7%B4%A2%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89KVO%E7%9A%84%E5%AE%9E%E7%8E%B0/index.html">
+<meta property="og:url" content="https://captaindaveluo.github.io/2021/03/19/KVO%E6%8E%A2%E7%B4%A2%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89KVO%E7%9A%84%E5%AE%9E%E7%8E%B0/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="1. KVO是什么KVO Apple官方文档 KVO(Key-Value Observing): Objective-C对观察者设计模式的一种实现.键-值观察是一种机制，允许在其他对象的指定属性发生更改时通知对象. 2. KVO底层实现的原理Key-Value Observing Implementation Details(官方文档) Automatic key-value observing">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2021/03/19/KVO%E6%8E%A2%E7%B4%A2%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89KVO%E7%9A%84%E5%AE%9E%E7%8E%B0/2021-03-19-10-30-45.png">
-<meta property="og:image" content="http://example.com/2021/03/19/KVO%E6%8E%A2%E7%B4%A2%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89KVO%E7%9A%84%E5%AE%9E%E7%8E%B0/2021-03-19-10-35-18.png">
+<meta property="og:image" content="https://captaindaveluo.github.io/2021/03/19/KVO%E6%8E%A2%E7%B4%A2%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89KVO%E7%9A%84%E5%AE%9E%E7%8E%B0/2021-03-19-10-30-45.png">
+<meta property="og:image" content="https://captaindaveluo.github.io/2021/03/19/KVO%E6%8E%A2%E7%B4%A2%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89KVO%E7%9A%84%E5%AE%9E%E7%8E%B0/2021-03-19-10-35-18.png">
 <meta property="article:published_time" content="2021-03-19T02:13:06.000Z">
 <meta property="article:modified_time" content="2021-03-19T02:44:51.499Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/03/19/KVO%E6%8E%A2%E7%B4%A2%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89KVO%E7%9A%84%E5%AE%9E%E7%8E%B0/2021-03-19-10-30-45.png">
+<meta name="twitter:image" content="https://captaindaveluo.github.io/2021/03/19/KVO%E6%8E%A2%E7%B4%A2%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89KVO%E7%9A%84%E5%AE%9E%E7%8E%B0/2021-03-19-10-30-45.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -295,7 +295,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/19/KVO%E6%8E%A2%E7%B4%A2%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89KVO%E7%9A%84%E5%AE%9E%E7%8E%B0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://captaindaveluo.github.io/2021/03/19/KVO%E6%8E%A2%E7%B4%A2%E5%8F%8A%E8%87%AA%E5%AE%9A%E4%B9%89KVO%E7%9A%84%E5%AE%9E%E7%8E%B0/" alt="微信分享二维码">
     </div>
 </div>
 
