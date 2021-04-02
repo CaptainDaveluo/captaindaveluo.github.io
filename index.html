@@ -152,6 +152,82 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-僵尸对象，野指针，内存泄漏" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/02/%E5%83%B5%E5%B0%B8%E5%AF%B9%E8%B1%A1%EF%BC%8C%E9%87%8E%E6%8C%87%E9%92%88%EF%BC%8C%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/">僵尸对象，野指针，内存泄漏</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/02/%E5%83%B5%E5%B0%B8%E5%AF%B9%E8%B1%A1%EF%BC%8C%E9%87%8E%E6%8C%87%E9%92%88%EF%BC%8C%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/" class="archive-article-date">
+  	<time datetime="2021-04-02T08:18:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、野指针："><a href="#一、野指针：" class="headerlink" title="一、野指针："></a>一、野指针：</h2><p>c语言的野指针：定义一个指针变量没有初始化，指针变量的值指向一块随机的空间，这个指针叫做野指针。</p>
+<p>oc中的野指针：指针指向的对象已经被回收，这样的指针叫做野指针。</p>
+<h2 id="二、僵尸对象："><a href="#二、僵尸对象：" class="headerlink" title="二、僵尸对象："></a>二、僵尸对象：</h2><p>一个已经被释放的对象，但是这个对象所占空间还没有分配给别人使用，这样的对象叫做僵尸对象。</p>
+<p> </p>
+<p>野指针去访问僵尸对象有可能出现问题。设置野指针为nil，当指针为nil时，通过这个指针去调用对象的方法，不会报错，没有任何反应。</p>
+<p> </p>
+<p>打开检查僵尸对象机制（选中diagnostics诊断中的enable zombie objects），只要访问僵尸对象，无论空间是否被分配都会报错。</p>
+<h2 id="三、内存泄漏"><a href="#三、内存泄漏" class="headerlink" title="三、内存泄漏"></a>三、内存泄漏</h2><p>指一个对象没有被及时回收，在该回收的时候没有被回收，一直保留在内存中，直到程序结束时才回收。</p>
+<p>单个对象的内存泄漏情况：</p>
+<p>1）有对象的创建，没有对应的release</p>
+<p>2)  retain的次数和release的次数不匹配</p>
+<p>3）在不适当的时候为指针赋值nil</p>
+<p>4)   在方法中为传入的对象不适当的retain</p>
+<p>5)  出现循环引用的情况，相互引用的对象不能被释放</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/02/%E5%83%B5%E5%B0%B8%E5%AF%B9%E8%B1%A1%EF%BC%8C%E9%87%8E%E6%8C%87%E9%92%88%EF%BC%8C%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-iOS-Android-native集成阿里移动推送实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
